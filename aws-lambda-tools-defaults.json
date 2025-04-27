@@ -1,0 +1,24 @@
+
+{
+    "Information" : [
+        "This file is used to configure the AWS .NET Lambda tooling."
+    ],
+    "profile"     : "jenkins",
+    "region"      : "us-east-1",
+    "configuration" : "Release",
+    "framework"     : "net8.0",
+    "function-runtime" : "dotnet8",
+    "function-handler" : "MyBackendApi::MyBackendApi.LambdaEntryPoint::FunctionHandlerAsync",
+    "function-name"    : "MyBackendApi",
+    "package-type"     : "Zip",
+    "function-architecture" : "x86_64",
+    "function-description"  : "EHR backend API using PostgreSQL, Redis, and JWT authentication",
+    "function-memory-size"  : 512,
+    "function-timeout"      : 15,
+    "function-role"         : "arn:aws:iam::025066242962:role/service-role/ehr-api-backend-role-nk83i7mk",
+    "function-subnets"      : "subnet-0ac6da9d289a61d17,subnet-07315ca9a3be58443",
+    "function-security-groups" : "sg-0e349a8636370b0d7",
+    "tracing-mode"             : "PassThrough",
+    "image-tag"                : "",
+    "environment-variables"    : "\"REDIS_HOST\"=\"nv-lhr-p-elasticcache-yvuqg5.serverless.use1.cache.amazonaws.com\";\"REDIS_PORT\"=\"6379\";\"DB_PORT\"=\"5432\";\"DB_USER\"=\"postgres\";\"Jwt__Audience\"=\"ehr-frontend\";\"DB_NAME\"=\"healthrecordsystem\";\"DB_HOST\"=\"database-1.cluqomukw1lx.us-east-1.rds.amazonaws.com\";\"Jwt__Issuer\"=\"EHR-API-Backend\";\"Jwt__Key\"=\"LcykfknkQLVQ4FSu8CuPvj6oj9aecPQ8n+K1RwhlVop8BXDQ/5TENeRnH8ryYbD11V4kMgoaKsrRKn6vJ6kRMQ==\";\"DB_PASSWORD\"=\"Vivek#25319\""
+}
