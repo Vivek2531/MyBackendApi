@@ -1,0 +1,64 @@
+/* Container for the entire form section */
+.add-record-container {
+  padding: 40px 20px;
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.add-record-container h2 {
+  font-size: 32px;
+  margin-bottom: 24px;
+  color: #2e8b57;
+  font-weight: 600;
+}
+
+/* Form layout */
+.add-record-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Input fields and select dropdown */
+.add-record-form input,
+.add-record-form select {
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.add-record-form input:focus,
+.add-record-form select:focus {
+  border-color: #2e8b57;
+}
+
+/* Submit button */
+.submit-button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #2e8b57;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.1s ease;
+}
+
+.submit-button:hover {
+  background-color: #256f47;
+  transform: translateY(-1px);
+}
+
+.submit-button:active {
+  background-color: #1f5938;
+  transform: translateY(1px);
+}

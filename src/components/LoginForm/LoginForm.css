@@ -1,0 +1,250 @@
+/* Main container */
+body {
+  background: linear-gradient(to right, #e0f2ff, #ffffff);
+}
+
+.login-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.logo-image 
+{
+  height: 50px;
+  width: 70px;
+} 
+@media screen and (min-width: 992px) {
+  .login-main-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+}
+
+/* Left content */
+.left-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 992px) {
+  .left-section {
+    flex: 1;
+    text-align: left;
+    margin-bottom: 0;
+  }
+}
+
+.heading-login {
+  font-size: 32px;
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #264653;
+  margin-bottom: 20px;
+}
+
+.login-img {
+  width: 260px;
+  max-width: 100%;
+}
+
+@media screen and (min-width: 992px) {
+  .login-img {
+    width: 100%;
+    max-width: 420px;
+    margin: 20px 0;
+  }
+}
+
+/* Right content (form) */
+.right-section {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0px 8px 40px rgba(7, 7, 7, 0.08);
+  background-color: white;
+}
+
+.login-website-logo-desktop-img {
+  width: 185px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 991px) {
+  .login-website-logo-desktop-img {
+    display: none;
+  }
+}
+
+.login-website-logo-mobile-img {
+  width: 165px;
+  margin-top: 50px;
+  margin-bottom: 35px;
+}
+
+@media screen and (min-width: 992px) {
+  .login-website-logo-mobile-img {
+    display: none;
+  }
+}
+
+/* Role toggle buttons */
+.role-tabs {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.role-tab {
+  flex: 1;
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px;
+  border: 1px solid #d7dfe9;
+  background-color: #e2e8f0;
+  color: #475569;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.role-tab:hover {
+  background-color: #cbd5e1;
+}
+
+.role-tab.active {
+  background-color: #0b69ff;
+  color: #ffffff;
+  border: none;
+}
+
+/* Input fields */
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.input-label {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 12px;
+  color: #475569;
+  margin-bottom: 5px;
+}
+
+.input-field {
+  font-size: 14px;
+  height: 40px;
+  border: 1px solid #d7dfe9;
+  background-color: #e2e8f0;
+  color: #64748b;
+  border-radius: 2px;
+  padding: 8px 16px;
+  width: 100%;
+}
+
+/* Login button */
+.login-button {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 14px;
+  color: #ffffff;
+  height: 40px;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #0b69ff;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Error message */
+.error-message {
+  align-self: flex-start;
+  font-size: 12px;
+  margin-top: 5px;
+  color: #ff0b37;
+  font-family: 'Roboto';
+}
+
+
+.left-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 992px) {
+  .left-content {
+    align-items: flex-start;
+  }
+}
+
+/* Fix spacing around headings and image */
+.heading {
+  font-size: 32px;
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #264653;
+  margin: 0;
+}
+
+.logo-image {
+  height: 50px;
+  width: 70px;
+  margin: 0;
+}
+
+.login-links {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.link-text {
+  color: #0b69ff;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link-text:hover {
+  color: #094eb2;
+}
+
+.error-message {
+  margin-top: 8px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-top: 20px;
+}

@@ -1,0 +1,21 @@
+.patient-card {
+  background-color: rgba(0, 75, 80, 0.7); /* Transparent teal overlay */
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(3px); /* optional: enhances overlay look */
+}
+
+.patient-card:hover {
+  transform: translateY(-20px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.patient-card p {
+  margin: 8px 0;
+  line-height: 1.5;
+}

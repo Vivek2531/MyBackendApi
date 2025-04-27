@@ -1,0 +1,42 @@
+.add-record-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.add-record-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.add-record-form input,
+.add-record-form select,
+.add-record-form button {
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.submit-button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #2e8b57; /* same green as Add Record */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: background-color 0.25s ease, transform 0.1s ease;
+}
+
+.submit-button:hover {
+  background-color: #256f47;
+  transform: translateY(-1px);
+}
+
+.submit-button:active {
+  background-color: #1f5938;
+  transform: translateY(1px);
+}
