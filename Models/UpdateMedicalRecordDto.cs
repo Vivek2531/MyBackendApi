@@ -21,5 +21,7 @@ namespace MyBackendApi.Models
         public int PatientId { get; set; }
 
         public int DoctorId { get; set; }
+
+        public required string PatientName { get; set; }
     }
 }

@@ -139,5 +139,13 @@ namespace MyBackendApi.Controller
 
             return Ok(new { message = "Doctor deleted successfully" });
         }
+
+        [HttpGet]
+        [Route("ids")]
+        public IActionResult GetAllDoctorIds()
+        {
+            var doctorIds = dbContext.Doctors.Select(d => d.Id).ToList();
+            return Ok(doctorIds);
+        }
     }
 }

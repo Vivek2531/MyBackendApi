@@ -7,6 +7,7 @@ using MyBackendApi.Models;
 using Microsoft.AspNetCore.Authorization;
 // using StackExchange.Redis;
 using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore;
 
 namespace MyBackendApi.Controller
 {
@@ -40,6 +41,16 @@ namespace MyBackendApi.Controller
 
             // await _redisDb.StringSetAsync(cacheKey, JsonConvert.SerializeObject(recordsFromDb), TimeSpan.FromMinutes(10));
             return Ok(recordsFromDb);
+        }
+
+        [HttpGet("search/{name}")]
+        public IActionResult GetMedicalRecordsByName(string name)
+        {
+            var records = dbContext.MedicalRecords
+                .Where(r => EF.Functions.ILike(r.PatientName, $"%{name}%"))
+                .ToList();
+
+            return Ok(records);
         }
 
         [HttpGet]
@@ -111,7 +122,10 @@ namespace MyBackendApi.Controller
                 Prescription = dto.Prescription,
                 IsEditable = dto.IsEditable,
                 PatientId = dto.PatientId,
-                DoctorId = dto.DoctorId
+                DoctorId = dto.DoctorId,
+                PatientName = dto.PatientName,
+
+
             };
 
             dbContext.MedicalRecords.Add(record);
@@ -125,10 +139,11 @@ namespace MyBackendApi.Controller
         }
 
         [HttpPut("{id:int}")]
-        public async Task<IActionResult> UpdateMedicalRecord(int id, UpdateMedicalRecordDto dto)
+        public async Task<IActionResult> UpdateMedicalRecord(int id, [FromBody] UpdateMedicalRecordDto dto)
         {
             var record = dbContext.MedicalRecords.Find(id);
-            if (record == null) return NotFound(new { message = "Medical record not found" });
+            if (record == null)
+                return NotFound(new { message = "Medical record not found" });
 
             record.DateCreated = dto.DateCreated;
             record.LastUpdated = dto.LastUpdated;
@@ -138,9 +153,11 @@ namespace MyBackendApi.Controller
             record.IsEditable = dto.IsEditable;
             record.PatientId = dto.PatientId;
             record.DoctorId = dto.DoctorId;
+            record.PatientName = dto.PatientName;
 
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
 
+            // Optional: Clear Redis Cache
             // await _redisDb.KeyDeleteAsync($"medicalrecord:{id}");
             // await _redisDb.KeyDeleteAsync("medicalrecords:all");
             // await _redisDb.KeyDeleteAsync("medicalrecords:recent");
